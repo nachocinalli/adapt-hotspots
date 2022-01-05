@@ -1,0 +1,175 @@
+{
+	"type": "object",
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"id": "http://jsonschema.net",
+	"$ref": "http://localhost/plugins/content/component/model.schema",
+	"globals": {
+		"ariaRegion": {
+			"type": "string",
+			"required": true,
+			"default": "This component is a hotspot.",
+			"inputType": "Text",
+			"validators": [],
+			"translatable": true
+		}
+	},
+	"properties": {
+		"_supportedLayout": {
+			"type": "string",
+			"required": true,
+			"enum": ["full-width", "half-width", "both"],
+			"default": "half-width",
+			"editorOnly": true
+		},
+		"instruction": {
+			"type": "string",
+			"required": false,
+			"default": "",
+			"inputType": "Text",
+			"validators": [],
+			"help": "This is the instruction text",
+			"translatable": true
+		},
+
+		"_setCompletionOn": {
+			"type": "string",
+			"required": true,
+			"enum": ["inview", "allItems"],
+			"default": "allItems",
+			"title": "Set completion on",
+			"inputType": {
+				"type": "Select",
+				"options": ["inview", "allItems"]
+			},
+			"validators": ["required"],
+			"help": "Whether completion is based on the learner having viewed all the items - or just having viewed the component"
+		},
+		"_useNumberedPins": {
+			"type": "boolean",
+			"required": true,
+			"default": false,
+			"title": "Use numbered pins",
+			"inputType": "Checkbox",
+			"validators": [],
+			"help": "If enabled, the pin icons will be replaced with the item number. Useful if you want pins to be visited in a set order or show steps in a process."
+		},
+		"_graphic": {
+			"type": "object",
+			"required": false,
+			"title": "Main graphic",
+			"properties": {
+				"src": {
+					"type": "string",
+					"required": false,
+					"default": "",
+					"inputType": "Asset:image",
+					"validators": [],
+					"help": "This is the image that appears behind the pins"
+				},
+				"alt": {
+					"type": "string",
+					"required": false,
+					"title": "Alternative text",
+					"default": "",
+					"inputType": "Text",
+					"validators": [],
+					"help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
+					"translatable": true
+				}
+			}
+		},
+		"_items": {
+			"type": "array",
+			"required": true,
+			"title": "Items",
+			"items": {
+				"type": "object",
+				"required": true,
+				"properties": {
+
+					"title": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Item Title",
+						"default": "",
+						"validators": [],
+						"help": "This is the item title",
+						"translatable": true
+					},
+					"_pin": {
+						"type": "object",
+						"required": false,
+						"title": "Pin",
+						"properties": {
+							"large": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"inputType": "Asset:image",
+								"validators": [],
+								"help": "The large sized image for desktop devices"
+							},
+							"small": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"inputType": "Asset:image",
+								"validators": [],
+								"help": "The small sized image for mobile devices"
+							},
+							"_classes": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"inputType": "Text",
+								"validators": [],
+								"help": "Css classes for this pin"
+
+							}
+						}
+					},
+					"_classes": {
+						"type": "string",
+						"required": false,
+						"default": "",
+						"inputType": "Text",
+						"validators": [],
+						"help": "Classes that are applied to the item"
+					},
+					"_left": {
+						"type": "number",
+						"required": true,
+						"default": 0,
+						"title": "Pin Position - Left",
+						"inputType": "Number",
+						"validators": ["required", "number"],
+						"help": "Left position of pin"
+					},
+					"_top": {
+						"type": "number",
+						"required": true,
+						"default": 0,
+						"title": "Pin Position - Top",
+						"inputType": "Number",
+						"validators": ["required", "number"],
+						"help": "Top position of pin"
+					},
+					"_position": {
+						"type": "string",
+						"required": true,
+						"enum": ["top", "bottom", "left", "right"],
+						"default": "top",
+						"title": "Position",
+						"inputType": {
+							"type": "Select",
+							"options": ["top", "bottom", "left", "right"]
+						},
+						"validators": ["required"],
+						"help": "Title position"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,146 @@
+{
+  "$anchor": "hotspots-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_supportedLayout": {
+          "type": "string",
+          "title": "Supported layout",
+          "default": "full-width",
+          "enum": ["full-width", "half-width", "both"],
+          "_adapt": {
+            "editorOnly": true
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "_setCompletionOn": {
+          "type": "string",
+          "title": "Completion criteria",
+          "description": "Whether completion is based on the learner having viewed all the items - or just having viewed the component",
+          "default": "allItems",
+          "enum": ["inview", "allItems"],
+          "_backboneForms": "Select"
+        },
+        "_useNumberedPins": {
+          "type": "boolean",
+          "title": "Use numbered pins",
+          "description": "If enabled, the pin icons will be replaced with the item number. Useful if you want pins to be visited in a set order or show steps in a process",
+          "default": false
+        },
+        "_graphic": {
+          "type": "object",
+          "title": "Main graphic",
+          "default": {},
+          "properties": {
+            "src": {
+              "type": "string",
+              "isObjectId": true,
+              "title": "Source",
+              "description": "This is the image that appears behind the pins",
+              "_backboneForms": {
+                "type": "Asset",
+                "media": "image"
+              }
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alternative text",
+              "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank",
+              "default": "",
+              "_adapt": {
+                "translatable": true
+              }
+            }
+          }
+        },
+        "_items": {
+          "type": "array",
+          "title": "Items",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Item title",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                }
+              },
+
+              "_pin": {
+                "type": "object",
+                "title": "Pin",
+                "default": {},
+                "properties": {
+                  "large": {
+                    "type": "string",
+                    "isObjectId": true,
+                    "title": "Large",
+                    "description": "The large sized image for desktop devices",
+                    "_backboneForms": {
+                      "type": "Asset",
+                      "media": "image"
+                    }
+                  },
+                  "small": {
+                    "type": "string",
+                    "isObjectId": true,
+                    "title": "Small",
+                    "description": "The small sized image for mobile devices",
+                    "_backboneForms": {
+                      "type": "Asset",
+                      "media": "image"
+                    }
+                  },
+                  "_classes": {
+                    "type": "string",
+                    "title": "Pin custom classes",
+                    "description": "Allows you to specify custom CSS classes to be applied to the pin.",
+                    "default": ""
+                  }
+                }
+              },
+              "_classes": {
+                "type": "string",
+                "title": "Custom classes",
+                "description": "Custom classes that are applied to the item",
+                "default": ""
+              },
+              "_left": {
+                "type": "number",
+                "title": "Pin horizontal position (%)",
+                "default": 0
+              },
+              "_top": {
+                "type": "number",
+                "title": "Pin vertical position (%)",
+                "default": 0
+              },
+              "_position": {
+                "type": "string",
+                "title": "Position",
+                "description": "Title position",
+                "default": "top",
+                "enum": ["top", "bottom", "left", "right"],
+                "_backboneForms": "Select"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

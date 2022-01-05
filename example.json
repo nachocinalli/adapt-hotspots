@@ -1,0 +1,56 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "hotspots",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Hotspots",
+  "displayTitle": "Hotspots",
+  "body": "This is optional body text.",
+  "instruction": "This is the instruction text.",
+  "_setCompletionOn": "allItems",
+  "_useNumberedPins": false,
+  "_graphic": {
+    "small": "course/en/images/full-width.png",
+    "large": "course/en/images/full-width.png"
+  },
+  "_items": [
+    {
+      "title": "Item 1",
+      "_pin": {
+        "large": "",
+        "small": "",
+        "_classes": ""
+      },
+      "_top": 15,
+      "_left": 15,
+      "_classes": "",
+      "_position": "right"
+    },
+    {
+      "title": "Item 2",
+      "_pin": {
+        "large": "",
+        "small": "",
+        "_classes": ""
+      },
+      "_top": 15,
+      "_left": 15,
+      "_classes": "",
+      "_position": "right"
+    },
+    {
+      "title": "Item 3",
+      "_pin": {
+        "large": "",
+        "small": "",
+        "_classes": ""
+      },
+      "_top": 15,
+      "_left": 15,
+      "_classes": "",
+      "_position": "right"
+    }
+  ]
+}

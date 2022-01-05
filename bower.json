@@ -1,0 +1,17 @@
+{
+  "name": "adapt-hotspots",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nachocinalli/adapt-hotspots.git"
+  },
+  "framework": ">=5.14.0",
+  "version": "1.0.0",
+  "homepage": "https://github.com/nachocinalli/adapt-hotspots",
+  "issues": "https://github.com/nachocinalli/adapt-hotspots/issues",
+  "component": "hotspots",
+  "description": "A hotspots component",
+  "main": "/js/adapt-hotspots.js",
+  "displayName": "Hotspots",
+  "keywords": ["adapt-plugin", "adapt-component"],
+  "license": "GPLv3"
+}
